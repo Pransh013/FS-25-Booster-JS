@@ -1,3 +1,8 @@
+printPatternI(11);
+printPatternII(5);
+printPatternIII(5);
+printPatternIV(9);
+
 function printPatternI(n) {
   let rows = (n + 1) / 2;
   let st = 1;
@@ -79,8 +84,3 @@ function printPatternIV(n) {
     console.log(ans);
   }
 }
-
-printPatternI(11);
-printPatternII(5);
-printPatternIII(5);
-printPatternIV(9);
