@@ -6,53 +6,53 @@
 // can be passed as an argument to a function
 // can be returned from a function
 
-const arr = [1, 2, 3, 4, 5];
-const square = (x) => x * x;
-const cube = (x) => x * x * x;
+// const arr = [1, 2, 3, 4, 5];
+// const square = (x) => x * x;
+// const cube = (x) => x * x * x;
 
-function calculate(arr, cb) {
-  let output = [];
-  for(let i = 0; i< arr.length; i++) {
-    output.push(cb(arr[i]));
-  }
-  return output;
-}
-
-// function calculateSquares(arr) {
+// function calculate(arr, cb) {
 //   let output = [];
-//   for(let i = 0; i < arr.length; i++) {
-//     output.push(arr[i] * arr[i]);
+//   for(let i = 0; i< arr.length; i++) {
+//     output.push(cb(arr[i]));
 //   }
 //   return output;
 // }
 
-// function calculateCubes(arr) {
-//   let output = [];
-//   for (let i = 0; i < arr.length; i++) {
-//     output.push(arr[i] * arr[i] * arr[i]);
+// // function calculateSquares(arr) {
+// //   let output = [];
+// //   for(let i = 0; i < arr.length; i++) {
+// //     output.push(arr[i] * arr[i]);
+// //   }
+// //   return output;
+// // }
+
+// // function calculateCubes(arr) {
+// //   let output = [];
+// //   for (let i = 0; i < arr.length; i++) {
+// //     output.push(arr[i] * arr[i] * arr[i]);
+// //   }
+// //   return output;
+// // }
+
+// console.log(calculate(arr, square));
+// console.log(calculate(arr, cube));
+
+// const calculateSquares = (x) => {
+//   return function() {
+//     return x * x;
 //   }
-//   return output;
 // }
 
-console.log(calculate(arr, square));
-console.log(calculate(arr, cube));
-
-const calculateSquares = (x) => {
-  return function() {
-    return x * x;
-  }
-}
-
-const res = calculateSquares(5);
-console.log(res());
+// const res = calculateSquares(5);
+// console.log(res());
 
 // IIFE
 // Immediately Invoked Function Expression 
 // IIFE are the functions that are executed as soon as they are defined.
 
-(function greet() {
-  console.log("Hello World");
-})()
+// (function greet() {
+//   console.log("Hello World");
+// })()
 
 // function getData(showData) {
 //   //
@@ -61,5 +61,3 @@ console.log(res());
 // }
 
 // getData(showData);
-
-
