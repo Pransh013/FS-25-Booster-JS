@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+<body class="h-screen w-screen flex justify-center">
+  <div id="parent" class="border-2 border-black w-1/2 h-1/4 flex flex-col justify-center items-center">
+    <h1>Click to change color</h1>
+    <div class="w-full flex items-center justify-center gap-6">
+      <div class="color-btn h-20 w-20 border border-black rounded-md cursor-pointer bg-red-600" id="red"></div>
+      <div class="color-btn h-20 w-20 border border-black rounded-md cursor-pointer bg-blue-600" id="blue"></div>
+      <div class="color-btn h-20 w-20 border border-black rounded-md cursor-pointer bg-teal-600" id="teal"></div>
+      <div class="color-btn h-20 w-20 border border-black rounded-md cursor-pointer bg-orange-600" id="orange"></div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
