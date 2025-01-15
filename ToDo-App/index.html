@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+<body class="w-screen h-screen flex ">
+  <div id="left" class="w-1/2 h-full bg-gray-300 relative flex flex-col items-center justify-center gap-10">
+    <h1 class="absolute top-4 right-2 text-3xl font-bold text-black">TODO</h1>
+    <textarea id="task" placeholder="Write something" class="aspect-square size-64 rounded-md p-4"></textarea>
+    <button id="submit" type="submit" class="border-2 border-black bg-black text-white px-6 py-2 rounded-md">Create Todo</button>
+  </div>
+  <div id="right" class="w-1/2 h-full bg-black relative flex items-center justify-center gap-6 flex-wrap">
+    <h1 class="absolute top-4 left-2 text-3xl font-bold text-gray-400">APP</h1>
+    <div id="0" class="aspect-square size-44 rounded-md p-3 bg-white">
+      <p></p>
+      <icon>
+      Get up at 12pm</div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

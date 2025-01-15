@@ -1,0 +1,7 @@
+.task {
+  aspect-ratio: 1;
+  width: 175px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 4px;
+}
