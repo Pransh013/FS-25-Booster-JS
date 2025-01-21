@@ -1,0 +1,15 @@
+.cartItem {
+  height: 20px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  background-color: rgb(238, 151, 151);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap:20px
+}

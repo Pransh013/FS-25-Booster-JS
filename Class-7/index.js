@@ -15,7 +15,7 @@ const arr = [1, 2, 3, 4, 5];
 // }
 // // const output = customMap(arr, square);
 // const output = arr.customMap(x => x * x * x)
-// const squares = arr.map((val, idx) => val * val);
+// const squares = arr.map((val) => val * val);
 // console.log(arr, squares, output);
 
 // const filter = (x) => x >= 3;
