@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="w-screen h-screen flex flex-col items-center justify-center">
+    <h1 class="text-4xl font-bold">GeeksterMon</h1>
+    <div class="flex  gap-4">
+        <select name="type" id="type">
+            <option value="grass">Grass</option>
+            <option value="bug">Bug</option>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+            <option value="normal">Normal</option>
+            <option value="poison">Poison</option>
+        </select>
+        <button id="filter">Filter By Type </button>
+        <button id="reset"><a href="index.html">Refresh the Page</a></button>
+    </div>
+    <br>
+    <input type="text" id="search" placeholder="Start Searching Pokemon...">
+
+    <div id="pokemon_card_container" class="flex flex-wrap overflow-y-scroll gap-4 border-4 border-black"></div>
+    <script src="./script.js"></script>
+</body>
+</html>
