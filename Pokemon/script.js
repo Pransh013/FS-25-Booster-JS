@@ -25,6 +25,7 @@ function createPokemoncard(pokemon){
     return card;
 }
 
+
 filterButton.addEventListener("click", () => {
     let allCards = document.querySelectorAll('.pokemon_card');
     allCards.forEach(function(pokemon){
