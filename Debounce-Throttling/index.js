@@ -6,14 +6,10 @@ const fetchData = async (val) => {
   let users;
   const cacheData = JSON.parse(localStorage.getItem(val));
   if (cacheData) {
-    console.log(cacheData);
-    
-    console.log("from local storage");
     users = cacheData;
   } else {
     const response = await fetch(`https://dummyjson.com/users/search?q=${val}`);
     const data = await response.json();
-    console.log("api called");
     localStorage.setItem(val, JSON.stringify(data.users));
     users = data.users;
   }
@@ -26,14 +22,28 @@ const fetchData = async (val) => {
   });
 };
 
-let timer;
-const debouncedFetch = (query) => {
-  if (timer) clearTimeout(timer);
-  timer = setTimeout(() => {
-    fetchData(query);
-  }, 300);
+// let timer;
+// const debouncedFetch = (query) => {
+//   if (timer) clearTimeout(timer);
+//   timer = setTimeout(() => {
+//     fetchData(query);
+//   }, 300);
+// };
+
+
+const throttledFetch = () => {
+  let lastCall = 0;
+  return () => {
+    const now = Date.now();
+    if (now - lastCall >= 2000) {
+      lastCall = now;
+      fetchData(searchInput.value);
+      console.log("throttled call");
+    }
+  };
 };
 
-searchInput.addEventListener("input", () => {
-  debouncedFetch(searchInput.value);
-});
+const fn = throttledFetch(searchInput.value);
+
+searchInput.addEventListener("input", fn);
+
