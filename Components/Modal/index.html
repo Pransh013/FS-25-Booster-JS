@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Modal</title>
+  </head>
+  <body
+    class="h-screen w-screen flex flex-col gap-4 justify-center items-center relative"
+  >
+    <div
+      id="blur"
+      class="bg-gray-300 hidden w-screen h-screen absolute inset-0 flex justify-center items-center"
+    >
+      <div
+        id="modal"
+        class="h-64 w-96 rounded-lg border-2 border-black bg-zinc-200 relative flex absolute z-10"
+      >
+        <p>This is the modal</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-x absolute top-2 right-2 cursor-pointer"
+          id="close"
+        >
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </div>
+    </div>
+
+    <button
+      id="btn"
+      class="border border-gray-400 px-12 rounded-md py-4 bg-teal-500"
+    >
+      Open
+    </button>
+    <script src="index.js"></script>
+  </body>
+</html>

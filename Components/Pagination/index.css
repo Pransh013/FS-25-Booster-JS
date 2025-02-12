@@ -1,0 +1,21 @@
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: teal;
+    border: 2px solid white;
+    border-radius: 8px;
+    height: 50px;
+    width: 150px;
+}
+
+.btn {
+    border: 2px solid gray; 
+    background-color: teal;
+    border-radius: 3px;
+    height: 40px ;
+    padding: 0 20px;
+    color: white;
+}
+
+/* px-12 rounded-md py-4 bg-teal-500 */

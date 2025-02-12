@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css" />
+    <title>Pagination</title>
+  </head>
+  <body
+    class="h-screen w-screen flex flex-col gap-4 justify-center items-center"
+  >
+    <h1>Item List</h1>
+    <div
+      id="data-container"
+      class="grid grid-cols-2 overflow-y-scroll w-full bg-red-200 gap-5"
+    >
+    </div>
+    <div class="flex gap-2">
+      <button id="prev" class="btn">Prev</button>
+      <div id="btn-container" class="flex gap-1"></div>
+      <button id="next" class="btn">Next</button>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
