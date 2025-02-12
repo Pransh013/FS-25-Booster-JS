@@ -1,49 +1,51 @@
-const searchInput = document.querySelector("#searchInput");
-const btn = document.querySelector("#btn");
-const container = document.querySelector("#container");
+const storedUserInfo = localStorage.getItem("userInformation");
 
-const fetchData = async (val) => {
-  let users;
-  const cacheData = JSON.parse(localStorage.getItem(val));
-  if (cacheData) {
-    users = cacheData;
+// Function to store user information in local storage
+function storeUserInfo() {
+  let userInfo;
+  if (storedUserInfo) {
+    userInfo = JSON.parse(storedUserInfo);
+    alert("Welcome back! Your information is already stored.");
   } else {
-    const response = await fetch(`https://dummyjson.com/users/search?q=${val}`);
-    const data = await response.json();
-    localStorage.setItem(val, JSON.stringify(data.users));
-    users = data.users;
+    const firstName = prompt("Enter your first name:");
+    const lastName = prompt("Enter your last name:");
+    // const country = prompt("Enter your country:");
+    // const phoneNumber = prompt("Enter your phone number:");
+    // const state = prompt("Enter your state:");
+    // const city = prompt("Enter your city:");
+    // const village = prompt("Enter your village:");
+
+    userInfo = {
+      firstName,
+      lastName,
+      // country,
+      // phoneNumber,
+      // state,
+      // city,
+      // village,
+    };
+
+    // Store user information in local storage as a JSON string
+    localStorage.setItem("userInformation", JSON.stringify(userInfo));
   }
-  container.textContent = "";
-  users.map((user) => {
-    const nameBox = document.createElement("div");
-    nameBox.setAttribute("id", "nameBox");
-    nameBox.textContent = `${user.firstName} ${user.lastName}`;
-    container.appendChild(nameBox);
-  });
-};
 
-// let timer;
-// const debouncedFetch = (query) => {
-//   if (timer) clearTimeout(timer);
-//   timer = setTimeout(() => {
-//     fetchData(query);
-//   }, 300);
-// };
+  console.log("display");
 
+  // Display user information in the card
+  document.getElementById("first-name").textContent = userInfo.firstName;
+  document.getElementById("last-name").textContent = userInfo.lastName;
+  // document.getElementById("country").textContent = userInfo.country;
+  // document.getElementById("phone-number").textContent = userInfo.phoneNumber;
+  // document.getElementById("state").textContent = userInfo.state;
+  // document.getElementById("city").textContent = userInfo.city;
+  // document.getElementById("village").textContent = userInfo.village;
+}
 
-const throttledFetch = () => {
-  let lastCall = 0;
-  return () => {
-    const now = Date.now();
-    if (now - lastCall >= 2000) {
-      lastCall = now;
-      fetchData(searchInput.value);
-      console.log("throttled call");
-    }
-  };
-};
+// Call the function to store user information
+storeUserInfo();
 
-const fn = throttledFetch(searchInput.value);
-
-searchInput.addEventListener("input", fn);
-
+function resetuserInfo() {
+  localStorage.clear();
+  alert("Your information is clear.");
+  storeUserInfo();
+}
